@@ -10,9 +10,9 @@ AWS Lambda Python Layer Build Using Docker
 
 In this guide, we encountered an issue where the urllib3 package requires OpenSSL 1.1.1+, but the 'ssl' module in our current AWS Lambda environment is compiled with 'OpenSSL 1.0.2k-fips 26 Jan 2017'.
 
-To resolve this, we need migrate from Python3.8 to use Python3.10 on AWS Lambda which includes an updated version of OpenSSL.
+To resolve this, we need to migrate from Python3.8 to use Python3.10 on AWS Lambda which includes an updated version of OpenSSL.
 
-We also had the limitation of maximum 5 AWS Lambda Layers, where a single Lambda function. 
+We also had the limitation of maximum 5 AWS Lambda Layers on a single Lambda function. 
 Our task requires the following packages:
     azure-core
     azure-identity
