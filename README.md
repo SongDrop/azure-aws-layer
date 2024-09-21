@@ -1,4 +1,4 @@
-# azure-was-layer
+# azure-aws-layer
 python 3.10 azure AWS Layer 
 
 layer.zip contains the packed azure resources in python 3.10 so you just upload to your AWS Lambda function, and add as a layer, and ready to use.
