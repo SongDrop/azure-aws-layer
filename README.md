@@ -14,12 +14,12 @@ To resolve this, we need to migrate from Python3.8 to use Python3.10 on AWS Lamb
 
 We also had the limitation of maximum 5 AWS Lambda Layers on a single Lambda function. 
 Our task requires the following packages:
-    azure-core
-    azure-identity
-    azure-mgmt-compute
-    azure-mgmt-dns
-    azure-mgmt-network
-    azure-storage-blob 
+- azure-core
+- azure-identity
+- azure-mgmt-compute
+- azure-mgmt-dns
+- azure-mgmt-network
+- azure-storage-blob
 
 To overcome this, we will pack all these into a single custom Python layer using Docker and AWS Lambda's Python 3.10 image.
 
@@ -27,6 +27,7 @@ To overcome this, we will pack all these into a single custom Python layer using
 
 Here's a Dockerfile to build this layer:
 
+```
 FROM public.ecr.aws/lambda/python:3.10
 
 # Create a new directory for your python packages
@@ -42,6 +43,7 @@ RUN pip install --target=/python -r /requirements.txt
 
 # After installing the packages, package them into a .zip file
 RUN cd / && zip -r /layer.zip python/*
+```
 
 In this Dockerfile:
 
