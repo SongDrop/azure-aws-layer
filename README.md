@@ -9,6 +9,13 @@ layer.zip contains the packed azure resources in python 3.10 so you just upload 
 AWS Lambda Python Layer Build Using Docker
 
 In this guide, we encountered an issue where the urllib3 package requires OpenSSL 1.1.1+, but the 'ssl' module in our current AWS Lambda environment is compiled with 'OpenSSL 1.0.2k-fips 26 Jan 2017'.
+```
+{
+"errorMessage": "Unable to import module 'handler': urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'OpenSSL 1.0.2k-fips 26 Jan 2017'. See: https://github.com/urllib3/urllib3/issues/2168",
+"errorType": "Runtime.ImportModuleError",
+"stackTrace": []
+}
+```
 
 To resolve this, we need to migrate from Python3.8 to use Python3.10 on AWS Lambda which includes an updated version of OpenSSL.
 
