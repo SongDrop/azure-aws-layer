@@ -1,0 +1,6 @@
+azure-identity
+azure-core
+azure-storage-blob
+azure-mgmt-compute
+azure-mgmt-dns
+azure-mgmt-network
